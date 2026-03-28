@@ -22,7 +22,7 @@ const Company = () => {
                     <Avatar/>10k+
                 </AvatarGroup>
                 
-                </div>
+                </div>a
               <div className='text-lg flex gap-1 items-center text-amber-50'>
                 <IconMapPin className='h-5 w-5' stroke={1.5} />kanpur
               </div>

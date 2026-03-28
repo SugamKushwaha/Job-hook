@@ -6,7 +6,7 @@ import JobHistoryCard from './JobHistoryCard'
 const JobHistory = () => {
   return (
     <div  className='min-h-[90vh] bg-zinc-900 '>
-        <div className='text-2xl font-semiboldapply'>Job History</div>
+        <div className='text-2xl font-semibold pt-5 pb-10 pl-10 apply'>Job History</div>
         <div>
           <Tabs radius="lg" defaultValue="apply">
       <Tabs.List className='[&_button]:!text-lg mb-5 font-semibold [&_button[data-active="true"]]:!text-amber-400'>

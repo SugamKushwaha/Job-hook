@@ -4,7 +4,7 @@ import React from 'react'
 
 const JobHistoryCard = (props) => {
   return (
-    <div className='bg-zinc-800 p-4 rounded-xl flex flex-col gap-3 hover:shadow-[0_0_5px_1px_yellow]'>
+    <div className='bg-zinc-800 p-4 w-87 rounded-xl flex flex-col gap-3 hover:shadow-[0_0_5px_1px_yellow]'>
       
       <div className='flex justify-between'>
         <div className='flex gap-2 items-center'>
