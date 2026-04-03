@@ -3,10 +3,12 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 
 import { Divider, MantineProvider } from "@mantine/core";
+import { Notifications } from '@mantine/notifications';
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
 import '@mantine/tiptap/styles.css';
 import '@mantine/dates/styles.css';
+import '@mantine/notifications/styles.css';
 import "./index.css"; // ✅ REQUIRED for Tailwind
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FindJob from "./pages/FindJob.jsx";
@@ -27,6 +29,7 @@ import Profile from "./profile/Profile.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <MantineProvider defaultColorScheme='dark' >
+      
       <BrowserRouter>
       <div className="relative">
         <Header/>
