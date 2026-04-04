@@ -28,7 +28,6 @@
 
  const loginValidation =(name,value)=>{
     switch (name) {
-   
     case "email":
       if (!value.trim()) return "Email is required";
       return "";

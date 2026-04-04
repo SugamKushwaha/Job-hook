@@ -29,9 +29,8 @@ const Login = () => {
     }
     setFormError(newFormError);
     if(valid){
-         const { confirmPassword, ...payload } = data;
-    loginUser(payload)
-      .then((data) => console.log(res));
+    loginUser(data)
+      .then((res) =>{ console.log(res);
        notifications.show({
             title:"Login Successfull",
             message:"Redirecting to Home page...",
@@ -43,8 +42,10 @@ const Login = () => {
           })
           setTimeout(()=>{
             navigate("/")
-          },4000)
+          },4000);
+        })
       .catch((err) => {
+        console.log(err);
          notifications.show({
       title:"Login Failed",
       message:err.response.data.errorMessage,
@@ -71,7 +72,7 @@ const Login = () => {
 
       <Button onClick={handleSubmit} autoContrast variant='filled'>Login</Button>
 
-      <div className='mx-auto'> Don't have an account? <span to="/signup" className='text-amber-500 hover:underline cursor-pointer' onClick={()=>{navigate("/login");setFormError(form);setData(form)}}>SignUp</span></div>
+      <div className='mx-auto'> Don't have an account? <span to="/signup" className='text-amber-500 hover:underline cursor-pointer' onClick={()=>{navigate("/signup");setFormError(form);setData(form)}}>SignUp</span></div>
     </div>
   )
 }

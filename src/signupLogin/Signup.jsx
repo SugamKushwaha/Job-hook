@@ -3,7 +3,7 @@ import { IconAt, IconCheck, IconX } from '@tabler/icons-react'
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { registerUser } from '../UserServices/UserService'
-import signupValidation from '../UserServices/FormValidation'
+import { signupValidation } from '../UserServices/FormValidation';
 import { notifications } from '@mantine/notifications'
 
 const form={
