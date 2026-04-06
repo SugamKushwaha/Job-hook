@@ -8,7 +8,6 @@ import JobHistoryPage from './JobHistoryPage'
 import ApplyJobPage from './ApplyJobPage'
 import PostJobsPage from './PostJobsPage'
 import SignupPage from './SignupPage'
-import Profile from '../talentProfile/Profile'
 import TalentProfilePage from './TalentProfilePage'
 import App from '../App'
 import PostedJobs from "./PostedJobPage";
@@ -16,6 +15,7 @@ import Footer from '../footer/Footer'
 import Header from '../header/Header'
 import { useSelector } from 'react-redux'
 import FindJob from './FindJob'
+import ProfilePage from './ProfilePage'
 
 const AppRouts = () => {
     const user = useSelector((state)=>state.user);
@@ -34,7 +34,7 @@ const AppRouts = () => {
         <Route path="/post-job" element={<PostJobsPage/>}/>
         <Route path="/signup" element={user?<Navigate to="/"/>:<SignupPage/>}/>
         <Route path="/login" element={user?<Navigate to="/"/>:<SignupPage/>}/>
-        <Route path="/profile" element={<Profile/>}/>
+        <Route path="/profile" element={<ProfilePage/>}/>
         
         <Route path="/talent-profile" element={<TalentProfilePage/>}/>
         <Route path="*"   element={<App/>}/>

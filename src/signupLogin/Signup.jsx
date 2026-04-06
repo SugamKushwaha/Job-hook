@@ -55,18 +55,18 @@ const handleChange = (event) => {
     setFormError(newFormError);
    
     if (valid===true){
-      setLoader(true);
+      setLoading(true);
   registerUser(data).then((res) =>{ 
       console.log(res);
       setData(form);
        successNotification("Registerd succesfully","Redirecting to login page");
     setTimeout(()=>{
-      setLoader(false);
+      setLoading(false);
       navigate("/login");
     },4000)
     })
     .catch((err) =>{ 
-      setLoader(false);
+      setLoading(false);
       console.log(err);
      errorNotification("Registration Failed",err.response.data.errorMessage);
     });

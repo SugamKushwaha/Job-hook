@@ -2,6 +2,7 @@ import { Button } from '@mantine/core'
 import { IconBookmark } from '@tabler/icons-react'
 import React, { useState } from 'react'
 import ExpInput from './ExpInput';
+import { formatDate } from '../UserServices/Utilities';
 
 const ExperienceCard = (props) => {
   const [edit,setEdit]=useState(false);
@@ -18,7 +19,7 @@ const ExperienceCard = (props) => {
            </div>
          </div>
          <div className='text-sm text-amber-50'>
-           {props.duration}
+           {formatDate(props.startDate)} - {formatDate(props.endDate)}
          </div>
        </div>
        <div className='text-sm text-amber-50 text-justify'>
