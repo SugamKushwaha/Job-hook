@@ -17,7 +17,7 @@ const CertificationCard = (props) => {
         <div className='flex items-center gap-2'>
            <div className='flex flex-col items-end'>
             <div>{formatDate(props.issueDate)}</div>
-            <div>ID: {props.certificateId}</div>
+            <div>ID: {props.certificationId}</div>
          </div>
          {props.edit && <ActionIcon color='red.8' variant='subtle'>
           <IconTrash stroke={1.5} className='h-4/5 w-4/5' />

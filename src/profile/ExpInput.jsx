@@ -14,10 +14,19 @@ const ExpInput = (props) => {
   const dispatch = useDispatch();
   
 
-  useEffect(()=>{
-   if(!props.add){form.setValues({title:props.title,company:props.company,location:props.location,description:props.description,startDate:props.startDate,endDate:props.endDate,working:props.working})
-   }
-  },[])
+  useEffect(() => {
+  if (!props.add) {
+    form.setValues({
+      title: props.title,
+      company: props.company,
+      location: props.location,
+      description: props.description,
+      startDate:new Date(props.startDate),
+      endDate:new Date(props.endDate),
+      working: props.working
+    });
+  }
+}, []);
 
   const form =useForm({
     mode:"controlled",
@@ -40,27 +49,51 @@ const ExpInput = (props) => {
 
   })
 
- const handleSave=()=>{
-   form.validate();
-   if(!form.validate)return;
-   let exp=[...profile.experiences];
-   if(props.add){
-    exp.push(form.getValues());
-    exp[exp.length-1].startDate=exp[exp.length-1].startDate.toISOString();
-    exp[exp.length-1].endDate=exp[exp.length-1].endDate.toISOString();
-   }
-   else{
-     exp[props.index]=form.getValues();
-     exp[exp.length-1].startDate=exp[props.index].startDate.toISOString();
-     exp[exp.length-1].endDate=exp[props.index].endDate.toISOString();
-   }
-   let updatedProfile={...profile, experiences:exp};
-   props.setEdit(false);
-   dispatch(changeProfile(updatedProfile));
-   successNotification("Success",`Experience ${props.add?"Added":"Updated"} successfully`);
+//  const handleSave=()=>{
+//    const validation = form.validate();
+// if (validation.hasErrors) return;
+//    let exp=[...profile.experience];
+//    if(props.add){
+//     exp.push(form.getValues());
+//     exp[exp.length-1].startDate=exp[exp.length-1].startDate.toISOString();
+//     exp[exp.length-1].endDate=exp[exp.length-1].endDate.toISOString();
+//    }
+//    else{
+//      exp[props.index]=form.getValues();
+//      exp[props.index].startDate=exp[props.index].startDate.toISOString();
+//      exp[props.index].endDate=exp[props.index].endDate.toISOString();
+//    }
+//    let updatedProfile={...profile, experience:exp};
+//    props.setEdit(false);
+//    dispatch(changeProfile(updatedProfile));
+//    successNotification("Success",`Experience ${props.add?"Added":"Updated"} successfully`);
+//  }
 
- }
 
+//Working handleSaving method
+
+const handleSave = () => {
+  const validation = form.validate();
+  if (validation.hasErrors) return;
+  let exp = [...(profile.experience || [])];
+  if (props.add) {
+    const newExp = form.getValues();
+    newExp.startDate = newExp.startDate.toISOString();
+    newExp.endDate = newExp.endDate?.toISOString();
+    exp.push(newExp);
+  } else {
+    const updatedExp = form.getValues();
+    updatedExp.startDate = updatedExp.startDate.toISOString();
+    updatedExp.endDate = updatedExp.endDate?.toISOString();
+    exp[props.index] = updatedExp;
+  }
+  const updatedProfile = { ...profile, experience: exp };
+  dispatch(changeProfile(updatedProfile));
+  props.setEdit(false);
+
+  successNotification("Success", `Experience ${props.add ? "Added" : "Updated"} successfully`);
+};
+ 
   return (
     <div className='flex flex-col gap-3'>
       <div className='text-lg font-semibold'>{props.add?"Add":"Edit"} Experience</div>
@@ -77,6 +110,7 @@ const ExpInput = (props) => {
         autosize
         label="Summary"
         placeholder='Enter Summary...'
+        withAsterisk
         
       />
 
@@ -87,12 +121,14 @@ const ExpInput = (props) => {
         {...form.getInputProps('startDate')}
           label="Start Date"
           placeholder="Pick month"
+          withAsterisk
           maxDate={form.getValues().endDate||undefined}
         />
 
         {/* End Date */}
         <MonthPickerInput  disabled={form.getValues().working}
         {...form.getInputProps('endDate')}
+        withAsterisk
           label="End Date"
           placeholder="Pick month"
         minDate={form.getValues().startDate||undefined}
@@ -102,7 +138,7 @@ const ExpInput = (props) => {
        <Checkbox checked={form.getValues().working} onChange={(event)=>form.setFieldValue("working",event.currentTarget.checked)} autoContrast label="Currently working here" />
 
         <div className='flex gap-5'>
-           <Button onClick={handleSave} color='yellow' variant='outline'>Save</Button>
+           <Button onClick={handleSave} color="green.5" variant='outline'>Save</Button>
           <Button onClick={()=>props.setEdit(false)} color='red.8' variant='light'>Cancel</Button>
         </div>
 

@@ -16,6 +16,7 @@ import { setProfile } from '../slices/ProfileSlice'
 import About from './About'
 import Skills from './Skills'
 import Experience from './Experience'
+import Certificate from './Certificate'
 
 const Profile = (props) => {
   const dispatch = useDispatch();
@@ -64,23 +65,7 @@ useEffect(()=>{
        <Divider mt={40}/>
        <Experience/>
         <Divider mt={40}/>
-       <div className='px-12 mt-10'>
-        <div className='text-2xl font-semibold mb-5 flex justify-between'>Certificatons<div className='flex gap-5'><ActionIcon onClick={()=>setAddCerti(true)} size="lg" color='yellow' variant='subtle' aria-label='settinge'>
-                <IconPlus className='h-4/5 w-4/5' />
-               </ActionIcon>
-               
-               <ActionIcon onClick={()=>handleEdit(4)} size="lg" color='yellow' variant='subtle' aria-label='settinge'>
-                {edit[4]?<IconDeviceFloppy className='h-4/5 w-4/5' />:<IconPencil className='h-4/5 w-4/5'/>}
-               </ActionIcon></div></div>
-              <div className='flex flex-col gap-8'>
-                 {
-          profile?.certification?.map((certi,index)=>(
-          <CertificationCard key={index}  {...certi} edit={edit[4]} />)
-        )}{
-         addCerti && <CertiInput setEdit={setAddCerti} />
-        }
-              </div>
-       </div>
+       <Certificate/>
     </div>
   )
 }
