@@ -1,14 +1,30 @@
 import React from 'react'
 import logo1 from "../FindIcons/micro.jpg";
-import { IconBookmark, IconClockHour3 } from '@tabler/icons-react';
-import { Divider, Text } from '@mantine/core';
+import { IconBookmark, IconBookmarkFilled, IconClockHour3 } from '@tabler/icons-react';
+import { Button, Divider, Text } from '@mantine/core';
 import { Link } from 'react-router-dom';
 import { timeAgo } from '../UserServices/Utilities';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeProfile } from '../slices/ProfileSlice';
 
 
 const JobCard = (props) => {
+  const profile = useSelector((state)=>state.profile);
+  const dispath = useDispatch();
+
+  const handleSaveJob=()=>{
+    let savedJobs=[...profile.savedJobs];
+    if(savedJobs?.includes(props.id)){
+      savedJobs=savedJobs?.filter((id)=>id!==props.id);
+    }else{
+      savedJobs=[...savedJobs, props.id];
+    }
+    let updatedProfile={...profile, savedJobs:savedJobs};
+    dispath(changeProfile(updatedProfile));
+  }
+
   return (
-    <Link to={`/jobs/${props.id}`} className='bg-zinc-800 p-4 w-87 flex flex-col gap-4 rounded-xl hover:shadow-[0_0_5px_1px_yellow] !shadow-amber-400'>
+    <div  className='bg-zinc-800 p-4 w-87 flex flex-col gap-4 rounded-xl hover:shadow-[0_0_5px_1px_yellow] !shadow-amber-400'>
        <div className='flex justify-between'>
          <div className='flex gap-2 items-center'>
            <div className='p-2 bg-zinc-800'>
@@ -18,7 +34,9 @@ const JobCard = (props) => {
              <div className='text-xs text-amber-50'>{props.company} &#x2022; {props.applicants?props.applicants.length:0} Applicants</div>
            </div>
          </div>
-         <IconBookmark className='text-zinc-400 cursor-pointer' />
+        { 
+           profile.savedJobs?.includes(props.id)? <IconBookmarkFilled  onClick={handleSaveJob} className='cursor-pointer text-amber-400' />:<IconBookmark  onClick={handleSaveJob} className='text-zinc-400 cursor-pointer  hover:text-amber-400' />
+        }
        </div>
        <div className='flex gap-2 [&>div]:py-1 [&>div]:px-2 [&>div]:bg-zinc-700 [&>div]:text-amber-300 [&>div]:rounded-lg text-xs'>
            <div>{props.experience}</div>
@@ -36,7 +54,10 @@ const JobCard = (props) => {
           <IconClockHour3 className='h-5 w-5' stroke={1.5} />Posted {timeAgo(props.postTime)}.
          </div>
        </div>
-    </Link>
+       <Link to={`/jobs/${props.id}`} >
+       <Button fullWidth color="yellow.7" variant="outline" >View Job</Button>
+      </Link>
+    </div>
   )
 }
 

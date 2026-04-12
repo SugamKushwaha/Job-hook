@@ -4,7 +4,6 @@ import { Link, useNavigate, useParams } from 'react-router-dom'
 import { Button } from '@mantine/core'
 import { IconArrowLeft } from '@tabler/icons-react'
 import { getJob } from '../UserServices/JobService'
-import Jobs from '../findJobs/Jobs'
 
 const ApplyJobPage = () => {
   const navigate = useNavigate();
@@ -23,7 +22,7 @@ const ApplyJobPage = () => {
     <div className='min-h-[90vh] bg-zinc-900 '>
        
          <Button my="sm" color='yellow' variant='light'leftSection={<IconArrowLeft size={20} />} onClick={()=>navigate(-1)} >Back</Button>
-      <ApplyJobs {...Jobs} />
+        <ApplyJobs {...job} />
     </div>
   )
 }

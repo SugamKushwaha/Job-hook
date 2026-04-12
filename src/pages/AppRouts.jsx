@@ -28,15 +28,15 @@ const AppRouts = () => {
         <Route path="/find-talent" element={<FindTelent/>}/>
         <Route path="/jobs/:id" element={<JobDescriptionPage/>}/>
         <Route path="/company/:name" element={<CompanyProfilePage/>}/>
-        <Route path="/posted-job" element={<PostedJobs/>}/>
+        <Route path="/posted-job/:id" element={<PostedJobs/>}/>
         <Route path="/job-history" element={<JobHistoryPage/>}/>
         <Route path="/apply-job/:id" element={<ApplyJobPage/>}/>
-        <Route path="/post-job" element={<PostJobsPage/>}/>
+        <Route path="/post-job/:id" element={<PostJobsPage/>}/>
         <Route path="/signup" element={user?<Navigate to="/"/>:<SignupPage/>}/>
         <Route path="/login" element={user?<Navigate to="/"/>:<SignupPage/>}/>
         <Route path="/profile" element={<ProfilePage/>}/>
         
-        <Route path="/talent-profile" element={<TalentProfilePage/>}/>
+        <Route path="/talent-profile/:id" element={<TalentProfilePage/>}/>
         <Route path="*"   element={<App/>}/>
       </Routes>
       <Footer/>

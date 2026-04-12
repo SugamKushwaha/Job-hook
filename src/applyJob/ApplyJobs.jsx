@@ -3,8 +3,9 @@ import { IconCheck, IconPaperclip } from '@tabler/icons-react'
 import React, { useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom';
 import ApplicationForm from './ApplicationForm';
+import { timeAgo } from '../UserServices/Utilities';
 
-const ApplyJobs = () => {
+const ApplyJobs = (props) => {
 
   const [preview,setPreview]=useState(false);
   const [submit,steSubmit] = useState(false);
@@ -33,8 +34,8 @@ const ApplyJobs = () => {
            <div className='p-3 bg-zinc-800 rounded-xl'>
             <img className='h-14' src="" alt="" /></div>
            <div className='flex flex-col gap-1'> 
-             <div className='font-semibold text-2xl'>engineer</div>
-             <div className='text-lg text-amber-50'>google&bull; 48 Applicants</div>
+             <div className='font-semibold text-2xl'>{props.jobTitle}</div>
+             <div className='text-lg text-amber-50'>{props.company} &bull; {timeAgo(props.postTime)} &bull; {props.applicants?props.applicants.length:0} Applicants</div>
            </div>
          </div>
        </div>

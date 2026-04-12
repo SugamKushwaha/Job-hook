@@ -1,11 +1,45 @@
 import { ActionIcon, Button, Divider } from '@mantine/core'
-import { IconBookmark, IconMapPin } from '@tabler/icons-react'
-import React from 'react'
+import { IconBookmark, IconBookmarkFilled, IconMapPin } from '@tabler/icons-react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { card, desc } from '../data/Data'
+import { useDispatch, useSelector } from 'react-redux'
+import { changeProfile } from '../slices/ProfileSlice'
+import PostJob from '../postJobs/PostJob'
+import { errorNotification, successNotification } from '../UserServices/NotificationService'
 
 const JobDesc = (props) => {
     const data=desc;
+    const profile = useSelector((state)=>state.profile);
+    const dispatch = useDispatch();
+    const [applied, setApplied]= useState(false);
+    const user = useSelector((state)=>state.user);
+
+    const handleSaveJob=()=>{
+        let savedJobs=[...profile.savedJobs];
+        if(savedJobs?.includes(props.id)){
+          savedJobs=savedJobs?.filter((id)=>id!==props.id);
+        }else{
+          savedJobs=[...savedJobs, props.id];
+        }
+        let updatedProfile={...profile, savedJobs:savedJobs};
+        dispatch(changeProfile(updatedProfile));
+      }
+
+      useEffect(()=>{
+            if(props.applicants?.filter((applicant)=>applicant.applicantId==user.id).length>0){
+              setApplied(true);
+            }else setApplied(false);
+      },[props])
+
+      const handleClose=()=>{
+        PostJob({...props,jobStatus:"CLOSED"}).then((res)=>{
+          successNotification("Success","Job Closed Successfully");
+        }).catch((err)=>{
+          errorNotification("Error",err.response.data.errorMessage);
+        })
+      }
+
   return (
     <div className='w-2/3 ml-10'>
        <div className='flex justify-between'>
@@ -18,10 +52,17 @@ const JobDesc = (props) => {
            </div>
          </div>
          <div className='flex flex-col gap-2 items-center'>
-            <Link to={`/apply-job/${props.id}`}>
-            <Button  color='yellow' variant='light' >{props.edit?"Edit":"Apply"}</Button>
-            </Link>
-            {props.edit?<Button  color='red' variant='outline' >Delete</Button>:<IconBookmark className='text-zinc-400 cursor-pointer' />}
+            { 
+             (props.edit || !applied) && <Link to={props.edit?`/post-job/${props.id}`:`/apply-job/${props.id}`}>
+            <Button  color='yellow' variant='light' >{props.closed?"Reopen":props.edit?"Edit":"Apply"}</Button>
+            </Link>}{
+            !props.edit && applied && <Button  color="green.7" variant='light' >Applied</Button>
+            }
+            
+            {
+            props.edit && !props.closed? <Button onClick={handleClose}  color='red' variant='outline' >Close</Button>:profile.savedJobs?.includes(props.id)?<IconBookmarkFilled
+              onClick={handleSaveJob} className='cursor-pointer text-amber-400' />:<IconBookmark  onClick={handleSaveJob} className='text-zinc-400 cursor-pointer  hover:text-amber-400' />
+             }
          </div>
        </div>
        <Divider my="xl" />
