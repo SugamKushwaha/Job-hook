@@ -59,26 +59,70 @@ const PostJob = () => {
            }
     });
 
-    const handlePost=()=>{
-        // form.validate();
-        // if(!form.isValid())return;
-        const result = form.validate();
-        if (result.hasErrors) return;
-        postJobs({...form.getValues(),id,postedBy:user.id,jobStatus:"ACTIVE"}).then((res)=>{
-             successNotification("Success", "Job Posted Successfully");
-             navigate(`/posted-job/${res.id}`);
-        }).catch((err)=>{
-            errorNotification("Error",err.response.data.errorMessage);
-        })
-    }
-     const handleDraft=()=>{
-        postJobs({...form.getValues(),id,postedBy:user.id,jobStatus:"DRAFT"}).then((res)=>{
-             successNotification("Success", "Job Posted Successfully");
-             navigate(`/posted-job/${res.id}`);
-        }).catch((err)=>{
-            errorNotification("Error",err.response.data.errorMessage);
-        })
-    }
+    // const handlePost=()=>{
+    //     // form.validate();
+    //     // if(!form.isValid())return;
+    //     const result = form.validate();
+    //     if (result.hasErrors) return;
+    //     postJobs({...form.getValues(),id,postedBy:user.id,jobStatus:"ACTIVE"}).then((res)=>{
+    //          successNotification("Success", "Job Posted Successfully");
+    //          navigate(`/posted-job/${res.id}`);
+    //     }).catch((err)=>{
+    //         errorNotification("Error",err.response.data.errorMessage);
+    //     })
+    // }
+    const handlePost = () => {
+  const result = form.validate();
+  if (result.hasErrors) return;
+
+  const payload = {
+    ...form.getValues(),
+    postedBy: user.id,
+    jobStatus: "ACTIVE",
+  };
+
+  // ✅ FIX: remove id when creating
+  if (id && id !== "0") {
+    payload.id = Number(id);
+  }
+
+  postJobs(payload)
+    .then((res) => {
+      successNotification("Success", "Job Posted Successfully");
+      navigate(`/posted-job/${res.id}`);
+    })
+    .catch((err) => {
+      errorNotification("Error", err.response?.data?.errorMessage);
+    });
+};
+    //  const handleDraft=()=>{
+    //     postJobs({...form.getValues(),id,postedBy:user.id,jobStatus:"DRAFT"}).then((res)=>{
+    //          successNotification("Success", "Job Posted Successfully");
+    //          navigate(`/posted-job/${res.id}`);
+    //     }).catch((err)=>{
+    //         errorNotification("Error",err.response.data.errorMessage);
+    //     })
+    // }
+    const handleDraft = () => {
+  const payload = {
+    ...form.getValues(),
+    postedBy: user.id,
+    jobStatus: "DRAFT",
+  };
+
+  if (id && id !== "0") {
+    payload.id = Number(id);
+  }
+
+  postJobs(payload)
+    .then((res) => {
+      successNotification("Success", "Saved as Draft");
+      navigate(`/posted-job/${res.id}`);
+    })
+    .catch((err) => {
+      errorNotification("Error", err.response?.data?.errorMessage);
+    });
+};
 
   return (
     <div className='w-4/5 mx-auto'>

@@ -26,7 +26,9 @@ const TalentCard = (props) => {
     }).catch((err)=>{
       console.log(err);
     })
-    else setProfile(props);
+    else{
+       setProfile(props);
+    }
   },[props])
 
   const pickerControl = (
@@ -64,7 +66,7 @@ const TalentCard = (props) => {
             <img className='h-7' src={logo1} alt="" />
           </div>
           <div> 
-            <div className='font-semibold text-lg'>{props.name}</div>
+            <div className='font-semibold text-lg'>{profile.name}</div>
             <div className='text-sm text-amber-50'>
               {profile?.jobTitle} &#x2022; {profile.company}
             </div>
@@ -90,10 +92,10 @@ const TalentCard = (props) => {
           <IconCalendar stroke={1.5}/>Interview: {formatInterviewTime(props.interviewTime)}
         </div>:<div className='flex justify-between'>
         <div className='font-semibold text-zinc-100'>
-          23 lps
+         Exp: {profile?.totalExp?props.totalExp:1} Year
         </div>
         <div className='flex gap-1 text-xs items-center text-zinc-500'>
-          <IconMapPin className='h-5 w-5' stroke={1.5} /> {profile?.location}
+          <IconMapPin className='h-5 w-5' stroke={1.5} /> {profile?.location} 
         </div>
       </div>
       }

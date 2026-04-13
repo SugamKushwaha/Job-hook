@@ -3,9 +3,20 @@ import { dropdownData, searchFields } from '../Data/Data'
 import {  Input, RangeSlider } from '@mantine/core'
 import MultiInput from '../findJobs/MultiInput';
 import { IconUserCircle } from '@tabler/icons-react';
+import { useDispatch } from 'react-redux';
+import { updateFilter } from '../slices/FilterSlice';
 
 const SearchTelent = () => {
-   const [value, setValue] = useState([1, 50]);
+   const [value, setValue] = useState([0, 50]);
+   const dispatch= useDispatch();
+   const [name,setName]=useState('');
+   const handleChange=(name,event)=>{
+         if(name=="exp")dispatch(updateFilter({exp:event}));
+         else{
+          dispatch(updateFilter({name:event.target.value}));
+          setName(event.target.value);
+         }
+   }
   
 
   return (
@@ -15,7 +26,7 @@ const SearchTelent = () => {
         <div className='text-amber-400 bg-zinc-800 rounded-full p-1 mr-2'><IconUserCircle size={20} /></div>
       </div>
 
-       <Input className="[&_input]:!placeholder-zinc-500" variant='unstyled' placeholder="Talent Name" />
+       <Input defaultValue={name} onChange={(e)=>handleChange("name",e)} className="[&_input]:!placeholder-zinc-500" variant='unstyled' placeholder="Talent Name" />
 
       {searchFields.map((item, index) => (
         <div key={index} className="w-1/5">
@@ -25,12 +36,12 @@ const SearchTelent = () => {
 
       <div className="w-1/5 ">
       <div className='flex justify-between'>
-        <div>Selley</div>
-        <div>&#8377;{value[0]} LPA - &#8377;{value[1]} LPA</div>
+        <div>Experiences</div>
+        <div>{value[0]} - {value[1]}</div>
       </div>
         <RangeSlider color='yellow'  size="xs" value={value} labelTransitionProps={{transition:'skew-down',duration:150,
           timingFunction:'linear'
-        }} onChange={setValue} />
+        }} onChange={setValue} onChangeEnd={(e)=>handleChange("exp",e)} minRange={1} max={50} min={1} />
       </div>
 
     </div>

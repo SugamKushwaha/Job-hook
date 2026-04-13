@@ -1,10 +1,15 @@
 import { Checkbox, CheckIcon, Combobox, Group, Pill, PillsInput, useCombobox,Input } from '@mantine/core';
 import { IconSearch, IconSelector } from '@tabler/icons-react';
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateFilter } from '../slices/FilterSlice';
 
 //const groceries = ['🍎 Apples', '🍌 Bananas', '🥦 Broccoli', '🥕 Carrots', '🍫 Chocolate'];
 
  const MultiInput=(props)=> {
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
     setData(props.options);
   }, [props.options]);
@@ -25,15 +30,20 @@ import { useEffect, useState } from 'react';
     if (val === '$create') {
       setData((current) => [...current, search]);
       setValue((current) => [...current, search]);
+      dispatch(updateFilter({[props.title]:[...value, search]}))
     } else {
+      dispatch(updateFilter({[props.title]:value.includes(val)?value.filter((v)=>v!=val):[...value, val]}));
       setValue((current) =>
         current.includes(val) ? current.filter((v) => v !== val) : [...current, val]
+      
       );
     }
   };
 
-  const handleValueRemove = (val) =>
+  const handleValueRemove = (val) =>{
     setValue((current) => current.filter((v) => v !== val));
+   dispatch(updateFilter({[props.title]:value.filter((v)=> v!==val)}));
+  }
 
   const values = value
   .slice(

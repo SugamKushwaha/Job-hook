@@ -10,7 +10,7 @@ const PostedJobCard = (props) => {
     <Link to={`/posted-job/${props.id}`} className={` rounded-xl p-2 border-l-3 border-l-amber-400 ${props.id==id?"bg-amber-400 text-black":"bg-zinc-600 text-zinc-200"} `}>
       <div className='text-sm font-semibold'>{props.jobTitle}</div>
       <div className='text-xs  font-medium'>{props.location}</div>
-      <div className='text-xs '>Posted {timeAgo(props.postTime)}</div>
+      <div className='text-xs '>{props.jobStatus=="DRAFT"?"Drafted":props.jobStatus=="CLOSED"?"Closed":"Posted"} {timeAgo(props.postTime)}</div>
     </Link>
   )
 }

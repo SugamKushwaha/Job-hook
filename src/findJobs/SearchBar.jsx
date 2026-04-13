@@ -2,9 +2,19 @@ import React, { useState } from 'react'
 import MultiInput from './MultiInput'
 import { dropdownData, searchFields } from '../Data/Data'
 import {  RangeSlider } from '@mantine/core'
+import { useDispatch } from 'react-redux';
+import { updateFilter } from '../slices/FilterSlice';
 
 const SearchBar = () => {
-   const [value, setValue] = useState([1, 50]);
+   const [value, setValue] = useState([0, 50]);
+   const dispatch = useDispatch();
+   const [name, setName]=useState('');
+
+
+   const handleChange=(value)=>{
+    dispatch(updateFilter({Salary:value}));
+           
+      }
   
 
   return (
@@ -23,7 +33,7 @@ const SearchBar = () => {
       </div>
         <RangeSlider color='yellow'  size="xs" value={value} labelTransitionProps={{transition:'skew-down',duration:150,
           timingFunction:'linear'
-        }} onChange={setValue} />
+        }} onChange={setValue} onChangeEnd={handleChange} />
       </div>
 
     </div>
