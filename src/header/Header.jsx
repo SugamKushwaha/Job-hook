@@ -37,7 +37,7 @@ const Header = () => {
 
      <NavLinks/>
 
-      <div className="flex gap-5 items-center">
+      <div className="flex gap-5 text-xl font-semibold items-center">
        
         
     {user?<Profile/>:<Link to="/login"> <Button variant="subtle" color="yellow" >Login</Button> </Link>}

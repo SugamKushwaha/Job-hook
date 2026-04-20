@@ -24,8 +24,8 @@ const ExperienceCard = (props) => {
     !edit?<div className='flex flex-col gap-2'>
        <div className='flex justify-between'>
          <div className='flex gap-2 items-center'>
-           <div className='p-2 bg-zinc-800'>
-            <img className='h-7'  alt="" /></div>
+           <div className='p-2 bg-zinc-700 rounded-2xl'>
+            <img className='h-7 w-15' src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"  alt="" /></div>
            <div className='flex flex-col gap-1'> 
              <div className='font-semibold'>{props.title}</div>
              <div className='text-sm text-amber-50'>{props.company} &bull; {props.location}</div>
@@ -35,7 +35,7 @@ const ExperienceCard = (props) => {
            {formatDate(props.startDate)} - {props.working?"Present":formatDate(props.endDate)}
          </div>
        </div>
-       <div className='text-sm text-amber-50 text-justify'>
+       <div className='text-sm font-sans ml-5 text-amber-50 mb-4 mt-4  text-justify'>
         {props.description}
        </div>
          {props.edit && <div className='flex gap-5'>

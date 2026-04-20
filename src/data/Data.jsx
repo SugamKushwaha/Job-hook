@@ -130,6 +130,8 @@ export const dropdownData = [
   }
 ];
 
+
+
 export const jobList = [
   {
     jobTitle: "Product Designer",
@@ -512,10 +514,10 @@ const content = `
 export { fields, content };
 
 export const card = [
-  { name: "Location",   icon: IconMapPin2,        value: "New York" },
-  { name: "Experience", icon: IconBriefcase2,     value: "Expert" },
-  { name: "Salary",     icon: IconPremiumRights, value: "48 LPA" },
-  { name: "Job Type",   icon: IconBatteryVerticalCharging,    value: "Full Time" },
+  { id: "location",   name: "Location",   icon: IconMapPin2 },
+  { id: "experience", name: "Experience", icon: IconBriefcase2 },
+  { id: "packageOffered",    name: "Salary",     icon: IconPremiumRights },
+  { id: "jobType",    name: "Job Type",   icon: IconBatteryVerticalCharging },
 ];
 
 export const desc =
@@ -563,23 +565,46 @@ export  const companyData = {
 };
 export const similar = [
   {
-    name: "Meta",
+    name: "Google",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
     employees: 58664,
   },
   {
     name: "Netflix",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
     employees: 12800,
   },
   {
     name: "Amazon",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
     employees: 1540000,
   },
   {
     name: "Microsoft",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
     employees: 221000,
   },
   {
     name: "Apple",
+        logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    employees: 161000,
+  },
+  {
+   name: "Infosys",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg",
+    employees: 161000,
+  }, {
+    name: "Accenture",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg",
+    employees: 161000,
+  },{
+    name: "Apple",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+    employees: 161000,
+  },
+  {
+    name: "Wipro",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wipro_Primary_Logo_Color_RGB.svg",
     employees: 161000,
   }
 ];

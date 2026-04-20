@@ -23,7 +23,7 @@ const TalentProfilePage = () => {
     <div className='min-h-[90vh] bg-zinc-900 '> 
     <Divider />
      <Link to="/find-talent" className='my-4 inline-block p-4'>
-         <Button onClick={()=>navigate(-1)} leftSection={<IconArrowLeft/>} color='yellow' variant='light' >Back</Button>
+         <Button onClick={()=>navigate(-1)} leftSection={<IconArrowLeft/>} color="yellow.6" variant='light' >Back</Button>
          </Link>
      
      <div className='flex gap-5'>

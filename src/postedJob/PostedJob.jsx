@@ -14,7 +14,7 @@ useEffect(()=>{
   <div className="w-1/5 ">
     <div className="text-2xl font-semibold mb-5">Jobs</div>
     <div>
-      <Tabs value={activeTab} onChange={setActiveTab} autoContrast variant="pills" defaultValue="active">
+      <Tabs value={activeTab} onChange={setActiveTab} autoContrast variant="pills" color="yellow.8" defaultValue="active">
         <Tabs.List className='[&_button[aria-selected="false"]]:bg-amber-400 font-medium'>
           <Tabs.Tab value="ACTIVE">Active [{props.jobList?.filter((job)=>job?.jobStatus=="ACTIVE").length}]</Tabs.Tab>
 

@@ -26,7 +26,7 @@ const JobHistoryCard = (props) => {
       <div className='flex justify-between'>
         <div className='flex gap-2 items-center'>
           <div className='p-2 bg-zinc-900 rounded'>
-            <img className='h-7' src={props.logo} alt="company logo" />
+            <img className='h-7' src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="company logo" />
           </div>
           <div className='flex flex-col gap-1'> 
             <div className='font-semibold'>{props.jobTitle}</div>
@@ -52,7 +52,7 @@ const JobHistoryCard = (props) => {
 
       <div className='flex justify-between'>
         <div className='font-semibold text-zinc-100'>
-          ₹{props.packageOffered}
+          ₹{props.packageOffered} LPA
         </div>
         <div className='flex gap-1 text-xs items-center text-zinc-500'>
           <IconClockHour3 className='h-5 w-5' stroke={1.5} />

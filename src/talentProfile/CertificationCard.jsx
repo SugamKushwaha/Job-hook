@@ -13,8 +13,8 @@ const CertificationCard = (props) => {
            </div>
          </div>
          <div className='flex flex-col items-end'>
-            <div>Issued {formatDate(props.issueDate)}</div>
-            <div>ID: {props.certificateId}</div>
+            <div>Issued: {formatDate(props.issueDate)}</div>
+            <div>ID: {props.certificationId}</div>
          </div>
        </div>
       

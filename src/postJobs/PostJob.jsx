@@ -125,7 +125,7 @@ const PostJob = () => {
 };
 
   return (
-    <div className='w-4/5 mx-auto'>
+    <div className='w-4/5 mx-auto '>
         <div className='text-2xl font-semibold mb-5'>Post a Job</div>
         <div className='flex flex-col gap-8'>
             <div className='flex gap-10 [&>*]:w-1/2'>
@@ -144,13 +144,13 @@ const PostJob = () => {
 
             <Textarea {...form.getInputProps('about')} className='my-3' withAsterisk label="About Job" autosize minRows={2} placeholder='Enter about job...' />
         </div>
-        <div className='[&_button[data-active="true"]]:!text-amber-400 [&_button[data-active="true"]]:!bg-amber-50'>
-            <div className='text-sm font-medium'>Job Description <span className='text-red-500'>*</span> </div>
+        <div className='[&_button[data-active="true"]]:!text-amber-400 [&_button[data-active="true"]]:!bg-amber-50 '>
+            <div className='text-sm font-medium '>Job Description <span className='text-red-500'>*</span> </div>
             <RichTextEditer data={editorData} form={form} />
         </div>
-        <div className='flex gap-4'>
-              <Button  color='yellow' variant='light' onClick={handlePost} >Publish job</Button>
-              <Button color='yellow' onClick={handleDraft} variant='light' >Save as draft</Button>
+        <div className='flex gap-8 mt-5 '>
+              <Button  color='yellow.5' variant='light' onClick={handlePost} >Publish job</Button>
+              <Button color='yellow.6' onClick={handleDraft} variant='light' >Save as draft</Button>
         </div>
     </div> 
   )

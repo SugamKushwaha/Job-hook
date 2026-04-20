@@ -22,8 +22,8 @@ const CertificationCard = (props) => {
   return (
        <div className='flex justify-between mb-8'>
          <div className='flex gap-2 items-center'>
-           <div className='p-2 bg-zinc-800'>
-            <img className='h-7'  alt="" /></div>
+           <div className='p-1 bg-zinc-800'>
+            <img className='h-14' src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"  alt="" /></div>
            <div className='flex flex-col gap-1'> 
              <div className='font-semibold'>{props.name}</div>
              <div className='text-sm text-amber-50'>{props.issuer}</div>
@@ -31,7 +31,7 @@ const CertificationCard = (props) => {
          </div>
         <div className='flex items-center gap-2'>
            <div className='flex flex-col items-end'>
-            <div>{formatDate(props.issueDate)}</div>
+            <div>Issued: {formatDate(props.issueDate)}</div>
             <div>ID: {props.certificationId}</div>
          </div>
          {props.edit && <ActionIcon color='red.8' onClick={handleDelete} variant='subtle'>

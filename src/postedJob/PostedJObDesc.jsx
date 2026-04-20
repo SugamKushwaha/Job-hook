@@ -27,9 +27,9 @@ const PostedJObDesc = (props) => {
 
   return (
     <div className='mt-5 w-3/4 px-5'>
-     {props.jobTitle?<><div className='text-2xl flex items-center font-semibold mb-5'>{props.jobTitle} <Badge variant='light' size='sm' ml="sm" color='yellow'>{props.jobStatus}</Badge></div>
+     {props.jobTitle?<><div className='text-2xl flex items-center font-semibold mb-3'>{props.jobTitle} <Badge variant='light' size='sm' ml="sm" color='yellow.4'>{props.jobStatus}</Badge></div>
      
-     <div className='font-medium text-zinc-100'>{props.location}</div>
+     <div className='font-medium mb-7 text-zinc-400'>{props.location}</div>
      <div>
          <Tabs radius="lg" autoContrast value={tab} onChange={handleTabChange}>
                   <Tabs.List className='[&_button]:!text-lg mb-5 font-semibold [&_button[data-active="true"]]:!text-amber-400'>

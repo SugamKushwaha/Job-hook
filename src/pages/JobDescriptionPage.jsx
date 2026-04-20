@@ -21,7 +21,7 @@ const JobDescriptionPage = () => {
     <div className='min-h-[90vh] bg-zinc-900 '> 
     <Divider />
      <Link to="/find-jobs" className='my-4 inline-block p-4'>
-         <Button leftSection={<IconArrowLeft/>} color='yellow' variant='light' >Back</Button>
+         <Button leftSection={<IconArrowLeft/>} color='yellow.5' variant='light' >Back</Button>
          </Link>
      
      <div className='flex gap-5'>

@@ -39,7 +39,7 @@ const Skills=()=>{
     {profile?.skills?.map((skill, index) => 
       <div
         key={index}
-        className='bg-amber-200 bg-opacity-15 rounded-3xl text-amber-600 px-3 py-1'>
+        className='bg-zinc-700 bg-opacity-15 rounded-3xl text-amber-500 px-3 py-1'>
         {skill}
       </div>
     )}
