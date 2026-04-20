@@ -86,7 +86,7 @@ if (filter.Salary && filter.Salary.length > 0) {
   return (
     <div className='px-5 py-5'>
        <div className='flex justify-between mt-5'>
-         <div>Recommended jobs</div>
+         <div className="text-xl" >Recommended jobs</div>
         <Sort sort="job" />
        </div>
       <div className='mt-10 flex flex-wrap gap-5'>

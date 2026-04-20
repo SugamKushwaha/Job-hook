@@ -72,7 +72,7 @@ const Login = () => {
       <PasswordInput  value={data.password} name='password' onChange={handleChange} withAsterisk error={formError.password} leftSection={<IconAt style={{width:rem(18),height:rem(18)}} stroke={1.5} />}label="Password" placeholder='Enter Password' />
 
 
-      <Button onClick={handleSubmit} loading={loading} autoContrast variant='filled'>Login</Button>
+      <Button color="yellow" onClick={handleSubmit} loading={loading} autoContrast variant='filled'>Login</Button>
 
       <div className='mx-auto'> Don't have an account? <span to="/signup" className='text-amber-500 hover:underline cursor-pointer' onClick={()=>{navigate("/signup");setFormError(form);setData(form)}}>SignUp</span></div>
       <div onClick={open} className='text-amber-400 hover:underline cursor-pointer text-center'>Forget Password</div>

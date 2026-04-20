@@ -14,14 +14,14 @@ const DreamJob = () => {
         <div className="text-7xl font-bold landing-tight text-amber-50 [&>span]:text-amber-500">
           Find Your <span>Dream</span> <span>Job</span> With Us
         </div>
-        <div className="text-amber-50">
+        <div className="text-amber-50 ">
           Good life begins with a good company. Start exploring thousands of jobs in one place.
         </div>
 
         <div className="flex gap-3 mt-5">
-             <TextInput className="bg-zinc-600 rounded-lg p-1 px-2 text-amber-50" variant="unstyled" label="Job Title"placeholder="Software engineer" />
+             <TextInput className="bg-zinc-800 rounded-lg p-1 px-2 text-amber-50" variant="unstyled" label="Job Title"placeholder="Software engineer" />
      <TextInput
-     className="bg-zinc-600 rounded-lg p-1 px-2 text-amber-50"variant="unstyled"label="job Type"placeholder="Fulltime" />
+     className="bg-zinc-800 rounded-lg p-1 px-2 text-amber-50"variant="unstyled"label="job Type"placeholder="Fulltime" />
                   <div className="flex items-center justify-center h-full w-20 bg-amber-500 rounded-lg text-amber-100 p-2 hover:bg-amber-600"> <IconSearch className="h-[85%] w-[85%]" /></div>
 
         </div>
@@ -40,9 +40,9 @@ const DreamJob = () => {
          </Avatar.Group>
            </div>
            <div className="absolute left-21  w-fit top-[25%] border-amber-500 border rounded-lg p-2 backdrop-blur-md flex flex-col">
-              <div className="flex gap-2 items-center">
-                  <div className="w-13 h-14 p-1 bg-zinc-700">
-                    <img src={logo1} alt="" /></div>
+              <div className="flex gap-2 items-center font-sans">
+                  <div className="w-13 h-14 p-1 ">
+                    <img src= "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="" /></div>
                   <div className="text-sm text-amber-100">
                     <div>Software Engineer</div>
                     <div className="text-amber-100 text-xs">New York</div>

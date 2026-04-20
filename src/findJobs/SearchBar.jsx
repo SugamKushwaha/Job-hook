@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { updateFilter } from '../slices/FilterSlice';
 
 const SearchBar = () => {
-   const [value, setValue] = useState([0, 50]);
+   const [value, setValue] = useState([0, 60]);
    const dispatch = useDispatch();
    const [name, setName]=useState('');
 
@@ -26,12 +26,12 @@ const SearchBar = () => {
         </div>
       ))}
 
-      <div className="w-1/5 ">
+      <div className="w-1/5 mr-3 ">
       <div className='flex justify-between'>
-        <div>Selley</div>
+        <div>Sallery</div>
         <div>&#8377;{value[0]} LPA - &#8377;{value[1]} LPA</div>
       </div>
-        <RangeSlider color='yellow'  size="xs" value={value} labelTransitionProps={{transition:'skew-down',duration:150,
+        <RangeSlider color="yellow.6"  size="xs" value={value} labelTransitionProps={{transition:'skew-down',duration:150,
           timingFunction:'linear'
         }} onChange={setValue} onChangeEnd={handleChange} />
       </div>

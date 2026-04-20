@@ -81,7 +81,7 @@ const handleChange = (event) => {
         overlayProps={{radius:'sm', blur:2}}
         loaderProps={{color:'yellow', type:'bars'}}
        /><div className='w-1/2 px-20 flex flex-col justify-center gap-3'>
-      <div className='text-2xl font-semibold'> Creat Account</div>
+      <div className='text-2xl font-semibold'> Create Account</div>
       <TextInput value={data.name} name='name' error={formError.name} onChange={handleChange} withAsterisk label="Full Name" placeholder='Your Name' />
 
       <TextInput value={data.email} error={formError.email} name='email' onChange={handleChange} withAsterisk leftSection={<IconAt style={{width:rem(16), height:rem(16)}} />} label="Email" placeholder='Your email' />
@@ -92,14 +92,14 @@ const handleChange = (event) => {
 
        <Radio.Group value={data.accountType}   onChange={handleChange} label="You are" withAsterisk>
       <Group mt="xs">
-        <Radio className='py-4 hover:bg-zinc-700 has-[:checked]:bg-amber-400 px-6 border has-[:checked]:border-amber-500 border-zinc-700 rounded-lg' autoContrast value="APPLICANT" label="Applicant" />
-        <Radio className='py-4 hover:bg-zinc-700 has-[:checked]:bg-amber-400 px-6 border has-[:checked]:border-amber-500 border-zinc-700 rounded-lg' autoContrast value="EMPLOYER" label="Employer" />
+        <Radio color="white" className='py-4 hover:bg-zinc-700 has-[:checked]:bg-amber-600 px-6 border has-[:checked]:border-amber-500 border-zinc-700 rounded-lg' autoContrast value="APPLICANT" label="Applicant" />
+        <Radio color="white" className='py-4 hover:bg-zinc-700 has-[:checked]:bg-amber-600 px-6 border has-[:checked]:border-amber-500 border-zinc-700 rounded-lg' autoContrast value="EMPLOYER" label="Employer" />
       </Group>
        </Radio.Group>
        
       <Checkbox autoContrast label={<>I accept{' '}<Anchor>terms & conditions</Anchor></>} />
 
-      <Button loading={loading} onClick={handleSubmit} autoContrast variant='filled'>SignUp</Button>
+      <Button loading={loading} color="yellow" onClick={handleSubmit} autoContrast variant='filled'>SignUp</Button>
 
       <div className='mx-auto'>Have an account? <span  className='text-amber-500 hover:underline cursor-pointer' onClick={()=>{navigate("/login");setFormError(form);setData(form)}} >Login</span></div>
     </div></>

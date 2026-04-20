@@ -10,7 +10,7 @@ const Footer = () => {
        <div className='w-1/4 flex-col flex gap-4'>
         <div className="flex gap-1 items-center text-amber-500">
         <IconAnchor className="h-7 w-7 " stroke={2.5}  />
-        <div className="text-xl font-semibold">JobHook</div>
+        <div className="text-3xl font-semibold">JobHook</div>
       </div>
       <div className='text-sm text-amber-50'>
         Jon portal with user profiles updates, certification, work wexperiecna and admin job posting.

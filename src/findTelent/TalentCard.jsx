@@ -9,6 +9,8 @@ import '@mantine/dates/styles.css';
 import { getProfile } from '../UserServices/ProfileService';
 import { formatInterviewTime, openBase64PDF } from '../UserServices/Utilities';
 import { errorNotification, successNotification } from '../UserServices/NotificationService';
+import avatar from '../assets/avatar.png';
+
 
 const TalentCard = (props) => {
   const [opened, { open, close }] = useDisclosure(false);
@@ -63,7 +65,7 @@ const TalentCard = (props) => {
       <div className='flex justify-between'>
         <div className='flex gap-2 items-center'>
           <div className='p-2 bg-zinc-800 rounded-full'>
-            <img className='h-7' src={logo1} alt="" />
+            <img className='h-15 w-15 rounded-3xl'  src={profile.image?`data:image/jpeg;base64,${profile.image}`:avatar   } alt="" />
           </div>
           <div> 
             <div className='font-semibold text-lg'>{profile.name}</div>
@@ -107,7 +109,7 @@ const TalentCard = (props) => {
       {
        !props.invited &&<>
           <Link to={`/talent-profile/${profile?.id}`}>
-          <Button color='yellow' variant='outline' fullWidth>Profile</Button>
+          <Button color="yellow.5" variant='outline' fullWidth>Profile</Button>
         </Link>
 
       <div>

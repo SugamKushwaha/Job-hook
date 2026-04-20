@@ -39,6 +39,7 @@ const AppRouts = () => {
         <Route path="/talent-profile/:id" element={<TalentProfilePage/>}/>
         <Route path="*"   element={<App/>}/>
       </Routes>
+      <Divider/>
       <Footer/>
       </div>
       </BrowserRouter>

@@ -13,7 +13,7 @@ const NavLinks = () => {
   const location = useLocation();
 
   return (
-    <div className="flex gap-5 text-zinc-300 h-full items-center">
+    <div className="flex gap-5  text-zinc-300 h-full items-center">
       {links.map((link, index) => (
         <div
           key={index}

@@ -1,66 +1,74 @@
+import {
+  IconTrendingUp,
+  IconCode,
+  IconPalette,
+  IconChartDots,
+  IconDeviceMobile
+} from "@tabler/icons-react";
+
 export const jobCategories = [
   {
     title: "Digital Marketing",
-    description:
-      "Grow brands using SEO, social media marketing, and paid advertising strategies.",
+    description: "Grow brands using SEO, social media marketing, and paid advertising strategies.",
     jobs: "1K+ new jobs posted",
-    icon: "digital-marketing.png"
+    icon: IconTrendingUp
   },
   {
     title: "Web Development",
-    description:
-      "Build modern and responsive websites using React, Angular, and backend technologies.",
+    description: "Build modern and responsive websites using React, Angular, and backend technologies.",
     jobs: "850+ new jobs posted",
-    icon: "web-development.png"
+    icon: IconCode
   },
   {
     title: "Graphic Design",
-    description:
-      "Create stunning visuals, branding materials, and UI/UX designs.",
+    description: "Create stunning visuals, branding materials, and UI/UX designs.",
     jobs: "500+ new jobs posted",
-    icon: "graphic-design.png"
+    icon: IconPalette
   },
   {
     title: "Data Science",
-    description:
-      "Analyze data, build machine learning models, and generate business insights.",
+    description: "Analyze data, build machine learning models, and generate business insights.",
     jobs: "650+ new jobs posted",
-    icon: "data-science.png"
+    icon: IconChartDots
   },
   {
     title: "Mobile App Development",
-    description:
-      "Develop Android and iOS apps using Flutter, React Native, and native tools.",
+    description: "Develop Android and iOS apps using Flutter, React Native, and native tools.",
     jobs: "720+ new jobs posted",
-    icon: "mobile-app.png"
+    icon: IconDeviceMobile
   }
 ];
-
 export const testimonial = [
-    {
-        "name":"sugam Kushwaha",
-        "tetimonial":"lorem12",
-        "rating":5
-    },{
-        "name":"sugam Kushwaha",
-        "tetimonial":"lorem12",
-        "rating":5
-    },
-    {
-        "name":"sugam Kushwaha",
-        "tetimonial":"This job portal made",
-        "rating":5
-    },
-    {
-        "name":"sugam Kushwaha",
-        "tetimonial":"This job portal made",
-        "rating":5
-    },
-    {
-        "name":"styam Kushwaha",
-        "tetimonial":"This job portal made",
-        "rating":5
-    }
+  {
+    name: "Aman Sharma",
+    testimonial:
+      "I got my first job within 10 days of applying here. The UI is smooth and application tracking is very helpful.",
+    rating: 4.8,
+  },
+  {
+    name: "Priya Verma",
+    testimonial:
+      "The resume builder feature is amazing. It helped me create a professional CV that got recruiter attention instantly.",
+    rating: 5,
+  },
+  {
+    name: "Rahul Singh",
+    testimonial:
+      "Very easy to find relevant jobs. I especially like the filtering system and quick apply feature.",
+    rating: 4.6,
+  },
+  {
+    name: "Neha Gupta",
+    testimonial:
+      "This platform feels modern and fast. I connected directly with recruiters without any hassle.",
+    rating: 4.9,
+  },
+  {
+    name: "Satyam Kushwaha",
+    testimonial:
+      "Great experience overall. The job alerts and notifications keep me updated with new opportunities.",
+    rating: 4.7,
+  },
 ];
 
 export const footerLinks=[
@@ -259,6 +267,53 @@ export  const searchFields = [
     ]
   }
 ];
+
+export const companies = [
+  {
+    name: "Google",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg",
+  },
+  {
+    name: "Microsoft",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
+  },
+  {
+    name: "Amazon",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+  },
+  
+  {
+    name: "Netflix",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+  },
+  {
+    name: "Apple",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+  },
+  {
+    name: "Infosys",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/9/95/Infosys_logo.svg",
+  },
+  {
+    name: "Wipro",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wipro_Primary_Logo_Color_RGB.svg",
+  },
+  {
+    name: "Accenture",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/c/cd/Accenture.svg",
+  },{
+    name: "Apple",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+  },
+  {
+    name: "Wipro",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Wipro_Primary_Logo_Color_RGB.svg",
+  }, {
+    name: "Netflix",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg",
+  },
+];
+
 
 export const talentsdata = [
   {

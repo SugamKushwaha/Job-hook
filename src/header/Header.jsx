@@ -31,7 +31,7 @@ const Header = () => {
     location.pathname!="/signup"&& location.pathname!="/login" ? <div className="w-full items-center bg-zinc-900 justify-between px-6 text-white flex h-28">
 
       <div className="flex gap-1 items-center text-amber-500 ">
-        <IconAnchor className="h-10 w-10 " stroke={2.5}  />
+        <IconAnchor className=" " size={50} stroke={2.5}  />
         <div className="text-3xl font-semibold">JobHook</div>
       </div>
 

@@ -51,7 +51,7 @@ const {hovered ,ref}=useHover();
   
   
   return (
-    <div className='w-4/5 mx-auto mb-10'>
+    <div className='w-4/5 mx-auto '>
        <div className='relative px-5'>
            <img className='rounded-t-2xl h-70 w-full' src={bg} alt="" />
            {/* <div ref={ref} className='flex  items-center justify-center absolute -bottom-1/25 left-3'>
@@ -62,7 +62,7 @@ const {hovered ,ref}=useHover();
            </div> */}
            <div ref={ref} className='absolute -bottom-1/25 left-8'>
              <div className="relative w-48 h-48">
-              <Avatar className='!w-48 !h-48 rounded-full border-zinc-500 border-8' src={profile.image?`data:image/jpeg;base64,${profile.image}`:"/Avatar.png"} alt="it's me"/>
+              <Avatar className='!w-48 !h-48 rounded-full border-zinc-500 border-7' src={profile.image?`data:image/jpeg;base64,${profile.image}`:"/Avatar.png"} alt="it's me"/>
               {hovered && ( <Overlay className="!rounded-full" color="#000" backgroundOpacity={0.75} />
                )}
              {hovered && (<IconEdit className="absolute inset-0 m-auto z-[300] !w-16 !h-16" />)}

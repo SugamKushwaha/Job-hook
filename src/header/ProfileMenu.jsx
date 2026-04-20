@@ -11,7 +11,7 @@ import {
 } from '@tabler/icons-react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { removeUser } from '../slices/UserSlice';
 
 const ProfileMenu=()=> {
@@ -20,9 +20,11 @@ const ProfileMenu=()=> {
     const user=useSelector((state)=>state.user);
     const [checked, setchecked] = useState(false);
     const [opened, setOpened] = useState(false);
+    const navigate = useNavigate();
 
     const handleLogout=()=>{
          dispath(removeUser());
+         navigate('/');
     }
   return (
     <Menu shadow="md" width={200} opened={opened} onChange={setOpened}>

@@ -20,7 +20,7 @@ const CertificationCard = (props) => {
     }
 
   return (
-       <div className='flex justify-between'>
+       <div className='flex justify-between mb-8'>
          <div className='flex gap-2 items-center'>
            <div className='p-2 bg-zinc-800'>
             <img className='h-7'  alt="" /></div>
