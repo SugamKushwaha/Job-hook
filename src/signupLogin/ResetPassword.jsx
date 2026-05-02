@@ -77,8 +77,10 @@ const ResetPassword = (props) => {
   return (
     <div>
       <Modal opened={props.opened} onClose={props.close} title="Reset Password" >
-        <div className='flex gap-5 flex-col'> 
-          <TextInput value={email} name='email' size='md' onChange={(e)=>setEmail(e.target.value)} withAsterisk leftSection={<IconAt size={16} />} label="Email" placeholder='Your email' rightSection={<Button loading={otpSending && !otpSent} size='xs' className='mr-1' onClick={handleSendOtp} autoContrast disabled={email==="" || otpSent} variant='filled' >Reset</Button>}rightSectionWidth="xl"
+        <div className='flex gap-5 flex-col '> 
+          <TextInput className="" value={email} name='email' size='md' onChange={(e)=>setEmail(e.target.value)} withAsterisk leftSection={<IconAt size={16} />} label="Email" placeholder='Your email' rightSection=
+          {<Button loading={otpSending && !otpSent} size='xs' className='mr-1' onClick={handleSendOtp} autoContrast disabled={email==="" || otpSent} color="yellow.6" variant="filled" >Reset</Button>}
+          rightSectionWidth="xl"
            />
 
             {otpSent &&

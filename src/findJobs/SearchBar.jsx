@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import MultiInput from './MultiInput'
 import { dropdownData, searchFields } from '../Data/Data'
-import {  RangeSlider } from '@mantine/core'
+import {  Button, Collapse, RangeSlider } from '@mantine/core'
 import { useDispatch } from 'react-redux';
 import { updateFilter } from '../slices/FilterSlice';
+import { useDisclosure } from '@mantine/hooks';
 
 const SearchBar = () => {
+  const[opened, {toggle}]=useDisclosure(false);
    const [value, setValue] = useState([0, 60]);
    const dispatch = useDispatch();
    const [name, setName]=useState('');
@@ -18,16 +20,21 @@ const SearchBar = () => {
   
 
   return (
-    <div className="flex gap-4 items-center">
+    <div>
+      <div className="flex justify-end mr-5">
+        <Button className="align" m="sm" radius="xl" onClick={toggle} color="yellow.6" variant="outline" autoContrast>{opened?"Close":"Filters"}</Button>
+      </div>
+    <Collapse in={opened}>
+    <div className="px-5 flex gap-4 items-center">
 
       {dropdownData.map((item, index) => (
-        <div key={index} className="w-1/5">
+        <div key={index} className=" my-3">
           <MultiInput {...item} />
         </div>
       ))}
 
-      <div className="w-1/5 mr-3 ">
-      <div className='flex justify-between'>
+      <div className=" my-5  mr-3 ">
+      <div className='flex mb-1 justify-between'>
         <div>Sallery</div>
         <div>&#8377;{value[0]} LPA - &#8377;{value[1]} LPA</div>
       </div>
@@ -36,6 +43,8 @@ const SearchBar = () => {
         }} onChange={setValue} onChangeEnd={handleChange} />
       </div>
 
+    </div>
+    </Collapse>
     </div>
   );
 };

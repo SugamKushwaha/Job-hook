@@ -58,7 +58,7 @@ export const testimonial = [
     rating: 4.6,
   },
   {
-    name: "Neha Gupta",
+    name: "Sneha Yadav",
     testimonial:
       "This platform feels modern and fast. I connected directly with recruiters without any hassle.",
     rating: 4.9,

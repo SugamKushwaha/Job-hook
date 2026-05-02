@@ -30,7 +30,7 @@ const ProfileMenu=()=> {
     <Menu shadow="md" width={200} opened={opened} onChange={setOpened}>
       <Menu.Target>
          <div className="flex cursor-pointer items-center gap-2">
-                  <div>{user.name}</div>
+                  <div className="hidden min-[500px]:flex" > {user.name}</div>
                    <Avatar radius="xl" src={profile.image?`data:image/jpeg;base64,${profile.image}`:"/Avatar.png"} alt="it's me" />
                 </div>
       </Menu.Target>

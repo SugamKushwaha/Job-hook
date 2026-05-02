@@ -1,6 +1,7 @@
 import { Avatar, Rating } from '@mantine/core'
 import React from 'react'
 import { testimonial } from '../Data/Data'
+import avatar from '../assets/avatar.png';
 
 const Testimonials = () => {
   return (
@@ -16,7 +17,7 @@ const Testimonials = () => {
       className='flex flex-col gap-3 w-[18%] border-amber-400 p-3 border rounded-xl mt-10'
     >
       <div className='flex gap-2 ml-2 items-center'>
-        <Avatar className='!h-14 !w-14 ' src="avatar.png" alt={data.name} />
+        <Avatar className='!h-14 !w-14  ' src={avatar} alt={data.name} />
         <div>
           <div className='text-lg  text-amber-50 font-semibold'>
             {data.name}
