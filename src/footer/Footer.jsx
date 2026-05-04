@@ -6,14 +6,14 @@ import { useLocation } from 'react-router-dom';
 const Footer = () => {
   const location = useLocation();
   return (
-    location.pathname!="/signup" && location.pathname!="/login" ?<div className='pt-20 pb-5 flex gap-5 justify-around bg-zinc-900 font-["poppins"]' >
+    location.pathname!="/signup" && location.pathname!="/login" ?<div className='pt-20 pb-5 flex gap-5 justify-around bg-zinc-900 font-["poppins"] flex-wrap' >
        <div className='w-1/4 flex-col flex gap-4'>
         <div className="flex gap-1 items-center text-amber-500">
         <IconAnchor className="h-7 w-7 " stroke={2.5}  />
         <div className="text-3xl font-semibold">JobHook</div>
       </div>
-      <div className='text-sm text-amber-50'>
-        Jon portal with user profiles updates, certification, work wexperiecna and admin job posting.
+      <div className='text-sm  text-amber-50'>
+        Job portal with user profiles updates, certification, work wexperiecna and admin job posting.
       </div>
       <div className='flex gap-3 text-amber-300 [&>div]:bg-zinc-800 hover:[&>div]:bg-zinc-700 [&>div]:p-2 [&>div]:rounded-full [&>div]:cursor-pointer'>
         <div><IconBrandFacebook/></div>

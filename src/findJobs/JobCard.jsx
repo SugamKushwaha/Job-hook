@@ -24,7 +24,7 @@ const JobCard = (props) => {
   }
 
   return (
-    <div  className='bg-zinc-800 p-4 w-87 flex flex-col gap-4 rounded-xl hover:shadow-[0_0_5px_1px_yellow] !shadow-amber-500'>
+    <div  className='bg-zinc-800 p-4 w-87 flex flex-col gap-4 rounded-xl hover:shadow-[0_0_5px_1px_yellow] !shadow-amber-500 max-[753px]:w-full '>
        <div className='flex justify-between'>
          <div className='flex gap-2 items-center'>
            <div className='p-2 bg-zinc-800'>
