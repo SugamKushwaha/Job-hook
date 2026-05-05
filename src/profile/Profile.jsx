@@ -51,7 +51,7 @@ const {hovered ,ref}=useHover();
   
   
   return (
-    <div className='w-4/5 mx-auto '>
+    <div className='w-4/5 max-[900px]:w-full mx-auto '>
        <div className='relative px-5'>
            <img className='rounded-t-2xl h-70 w-full' src={bg} alt="" />
            {/* <div ref={ref} className='flex  items-center justify-center absolute -bottom-1/25 left-3'>

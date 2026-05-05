@@ -41,7 +41,7 @@ const JobDesc = (props) => {
       }
 
   return (
-    <div className='w-2/3 ml-10'>
+    <div className='w-2/3 max-[900px]:w-full max-[900px]:mr-5 ml-10'>
        <div className='flex justify-between'>
          <div className='flex gap-2 items-center'>
            <div className='p-3 bg-zinc-800 rounded-xl'>
@@ -51,7 +51,7 @@ const JobDesc = (props) => {
              <div className='text-lg text-amber-50'>{props.company}&bull;  {props.applicants?props.applicants.length:0}  Applicants</div>
            </div>
          </div>
-         <div className='flex flex-col gap-2 items-center'>
+         <div className='flex flex-col gap-2 items-center max-[550px]:mr-5'>
             { 
              (props.edit || !applied) && <Link to={props.edit?`/post-job/${props.id}`:`/apply-job/${props.id}`}>
             <Button  color="yellow.8" variant='light' >{props.closed?"Reopen":props.edit?"Edit":"Apply"}</Button>
@@ -66,11 +66,11 @@ const JobDesc = (props) => {
          </div>
        </div>
        <Divider my="xl" />
-       <div className='flex  justify-between'>
+       <div className='flex max-[450px]:mr-5 flex-wrap max-[550px]:gap-5 justify-between'>
         {
             card.map((item,index)=><div key={index} className='flex flex-col items-center gap-1'>
          <ActionIcon className='!h-15 !w-15'variant='light' color="yellow.5" radius="xl" aria-label='Settings' >
-           <item.icon className='h-4/5 w-10' stroke={1.3} />
+           <item.icon className='h-4/5 w-10 max-[550px]:w-10 max-[550px]:h-10' stroke={1.3} />
          </ActionIcon>
          <div className='text-zinc-300 font-semibold text-xl '>{item.name}</div>
          <div className=' text-sm hover:underline'>{props?props[item.id]:"NA"}{item.id=="packageOffered" && <>LPA</>}</div>
@@ -90,10 +90,10 @@ const JobDesc = (props) => {
          </div>
        </div>
        <Divider my="xl" />
-       <div className='[&_h4]:text-xl [&_*]:text-zinc-500 [&_li]:marker:text-amber-400 [&_li]:my-1 [&_h4]:my-4 [&_h4]:font-semibold [&_h4]:text-zinc-300 [&_p]:text-justify' dangerouslySetInnerHTML={{__html:data}}>
+       <div className='[&_h4]:text-xl [&_*]:text-zinc-500 [&_li]:marker:text-amber-400 [&_li]:my-1 [&_h4]:my-4 [&_h4]:font-semibold [&_h4]:text-zinc-300  flex-wrap max-[500px]:mr-5 [&_p]:text-justify' dangerouslySetInnerHTML={{__html:data}}>
        </div>
        <Divider my="xl" />
-       <div className='mb-5'>
+       <div className='mb-5 flex-col flex-wrap'>
          <div className="font-semibold text-2xl">About the company</div>
          <div>
           <div className='flex justify-between mb-2'>

@@ -53,11 +53,11 @@ const JobHistory = () => {
         <div className='text-2xl font-semibold pt-5 pb-10 pl-10 apply'>Job History</div>
         <div>
           <Tabs value={activeTab} onChange={handleTabChange} radius="lg" >
-      <Tabs.List className='[&_button]:!text-lg mb-5 font-semibold [&_button[data-active="true"]]:!text-amber-400'>
+      <Tabs.List className='[&_button]:!text-lg mb-5 font-semibold [&_button[data-active="true"]]:!text-amber-400 max-[490px]:[&_button]:!text-xl '>
         <Tabs.Tab value="APPLIED">Apply</Tabs.Tab>
         <Tabs.Tab value="SAVED">Saved</Tabs.Tab>
         <Tabs.Tab value="OFFERED">Offered</Tabs.Tab>
-        <Tabs.Tab value="INTERVIEWING">Interviewing</Tabs.Tab>
+        <Tabs.Tab value="INTERVIEWING">In Progress</Tabs.Tab>
       </Tabs.List>
       
       <Tabs.Panel value={activeTab}>

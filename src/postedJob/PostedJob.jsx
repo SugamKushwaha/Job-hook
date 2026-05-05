@@ -25,7 +25,7 @@ useEffect(()=>{
         
         </Tabs>
         </div>
-           <div className='flex flex-col gap-5 mt-5'>
+           <div className='flex flex-wrap flex-col gap-5 mt-5'>
             {
                 props.jobList?.filter((job)=>job?.jobStatus==activeTab).map((item,index)=><PostedJobCard key={index} {...item} />)
             }

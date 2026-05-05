@@ -21,14 +21,14 @@ const JobHistoryCard = (props) => {
       dispatch(changeProfile(updatedProfile));
     }
   return (
-    <div className='bg-zinc-800 ml-5 p-4 w-87 rounded-xl flex flex-col gap-3 hover:shadow-[0_0_5px_1px_yellow]'>
+    <div className='bg-zinc-800 ml-5 p-4 w-87 rounded-xl flex flex-col gap-3 hover:shadow-[0_0_5px_1px_yellow] max-[500px]:w-full max-[500px]:mr-5'>
       
-      <div className='flex justify-between'>
+      <div className='flex justify-between '>
         <div className='flex gap-2 items-center'>
           <div className='p-2 bg-zinc-900 rounded'>
             <img className='h-7' src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="company logo" />
           </div>
-          <div className='flex flex-col gap-1'> 
+          <div className='flex flex-wrap flex-col gap-1'> 
             <div className='font-semibold'>{props.jobTitle}</div>
             <div className='text-xs text-amber-50'>
               {props.company} &#x2022; {props.applicants?props.applicants.length:0} Applicants
@@ -40,7 +40,7 @@ const JobHistoryCard = (props) => {
                }
       </div>
 
-      <div className='flex gap-2 [&>div]:py-1 [&>div]:px-2 [&>div]:bg-zinc-700 [&>div]:text-amber-300 [&>div]:rounded-lg text-xs'>
+      <div className='flex gap-2  flex-wrap [&>div]:py-1 [&>div]:px-2 [&>div]:bg-zinc-700 [&>div]:text-amber-300 [&>div]:rounded-lg text-xs'>
         <div>{props.experience}</div>
         <div>{props.jobType}</div>
         <div>{props.location}</div>

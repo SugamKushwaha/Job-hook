@@ -10,7 +10,7 @@ import CompanyEmp from './CompanyEmp'
 const Company = (props) => {
   
   return (
-    <div className='w-3/4'>
+    <div className='w-3/4 max-[750px]:w-full flex '>
        <div className='relative px-5'>
            <div className='relative px-5'>
   
@@ -31,7 +31,7 @@ const Company = (props) => {
   />
 
 </div>
-           <div className='px-8 mt-15'>
+           <div className='px-8 max-[700px]:w-full flex  flex-col mt-15'>
               <div className='text-3xl  font-semibold flex justify-between'>Google
                 <AvatarGroup>
                     <Avatar />

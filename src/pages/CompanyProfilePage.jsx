@@ -10,7 +10,7 @@ const CompanyProfilePage = () => {
   return (
      <div className='min-h-[90vh] bg-zinc-900 '> 
          <Button my="md" leftSection={<IconArrowLeft/>} onClick={()=>navigate(-1)} color='yellow' variant='light' >Back</Button>
-     <div className='flex gap-5 justify-between'>
+     <div className='flex gap-5 max-[750px]:flex-wrap justify-between'>
         <Company/>
         <SimilerCompanies/>
      </div>

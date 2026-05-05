@@ -30,7 +30,7 @@ const ApplyJobs = (props) => {
   
   return (
     <div>
-      <div className='w-2/3 mx-auto'>
+      <div className='w-2/3 max-[700px]:w-full   max-[700px]:p-5  mx-auto'>
       
       <div className='flex justify-between'>
          <div className='flex gap-2 items-center'>

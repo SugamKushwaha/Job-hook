@@ -24,7 +24,7 @@ const JobDescriptionPage = () => {
          <Button leftSection={<IconArrowLeft/>} color='yellow.5' variant='light' >Back</Button>
          </Link>
      
-     <div className='flex gap-5'>
+     <div className='flex max-[900px]:flex-wrap justify-around gap-5'>
         <JobDesc {...job} />
         <RecommendedJobs/>
      </div>

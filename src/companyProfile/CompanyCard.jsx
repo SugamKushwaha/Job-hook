@@ -8,7 +8,7 @@ import React from 'react'
 const CompanyCard = (props) => {
   return (
     <div>
-      <div className='flex justify-between bg-zinc-600 items-center rounded-lg p-2'>
+      <div className='flex flex-wrap justify-between bg-zinc-600 items-center rounded-lg p-2 '>
          <div className='flex gap-2 items-center'>
            <div className='p-2 bg-zinc-700'>
             <img className='h-7' src={props.logo} alt="" /></div>

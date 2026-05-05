@@ -26,7 +26,8 @@ const PostedJObDesc = (props) => {
   },[props])
 
   return (
-    <div className='mt-5 w-3/4 px-5'>
+    <div className='mt-5 w-3/4 max-[
+    750px]:w-full max-[750px]:mr-10 px-5'>
      {props.jobTitle?<><div className='text-2xl flex items-center font-semibold mb-3'>{props.jobTitle} <Badge variant='light' size='sm' ml="sm" color='yellow.4'>{props.jobStatus}</Badge></div>
      
      <div className='font-medium mb-7 text-zinc-400'>{props.location}</div>
@@ -40,7 +41,7 @@ const PostedJObDesc = (props) => {
                     <Tabs.Tab value="rejected">Rejected</Tabs.Tab>
                   </Tabs.List>
 
-                  <Tabs.Panel value="overview" className='[&>div]:w-full'>
+                  <Tabs.Panel value="overview" className='[&>div]:w-full '>
                       <JobDesc edit={true} closed={props.jobStatus=="CLOSED"} {...props} />
                   </Tabs.Panel>
                   <Tabs.Panel value="applicants">

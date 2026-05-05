@@ -8,7 +8,7 @@ import { IconSearch } from "@tabler/icons-react";
 
 const DreamJob = () => {
   return (
-    <div className="flex items-center px-20">
+    <div className="flex flex-wrap max-[850px]:flex-col items-center px-20">
       
       <div className="flex flex-col w-[45%] gap-8">
         <div className="text-7xl font-bold landing-tight text-amber-50 [&>span]:text-amber-500">
@@ -27,7 +27,7 @@ const DreamJob = () => {
         </div>
       </div>
 
-     <div className="w-[55%] flex items-center justify-center">
+     <div className="w-[55%] flex  items-center justify-center">
          <div className="w-[60rem] relative">
         <img src={logo} alt="Boy"  />
            <div className="absolute right-25  w-fit top-[47%] border-amber-500 border rounded-lg p-2 backdrop-blur-md">
