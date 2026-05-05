@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import JobDesc from '../jobDescription/JobDesc'
 import { talentsdata } from '../data/Data'
 import TalentCard from '../findTelent/TalentCard'
+import { setProfile } from '../slices/ProfileSlice'
 
 
 const PostedJObDesc = (props) => {
@@ -10,20 +11,37 @@ const PostedJObDesc = (props) => {
   const [tab, setTab]=useState("overview");
   const [arr,setArr]= useState([]);
 
- const handleTabChange=(value)=>{
-    setTab(value);
-    if(value=="applicants"){
-      setArr(props.applicants?.filter((x)=>x.applicants=="APPLIED"));
-    }else if(value=="invited"){
-      setArr(props.applicants?.filter((x)=>x.applicants=="INTERVIEWING"));
-    }else if(value=="rejected"){
-      setArr(props.applicants?.applicants((x)=>x.applicants=="REJECTED"));
-    }
+const handleTabChange = (value) => {
+  setTab(value);
+
+  const statusMap = {
+    applicants: "APPLIED",
+    invited: "INTERVIEWING",
+    offered: "OFFERED",
+    rejected: "REJECTED"
+  };
+
+  if (!statusMap[value]) {
+    setArr([]);
+    return;
   }
+
+  const filtered = props.applicants?.filter(
+    x => x.applicationStatus?.toUpperCase() === statusMap[value]
+  );
+
+  console.log("Filtered:", filtered);
+
+  setArr(filtered || []);
+};
 
   useEffect(()=>{
     handleTabChange("overview")
   },[props])
+
+  useEffect(() => {
+  setProfile(props);
+}, [props]);
 
   return (
     <div className='mt-5 w-3/4 max-[
