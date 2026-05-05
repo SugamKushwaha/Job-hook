@@ -128,7 +128,7 @@ const PostJob = () => {
     <div className='w-4/5 mx-auto '>
         <div className='text-2xl font-semibold mb-5'>Post a Job</div>
         <div className='flex flex-col gap-8'>
-            <div className='flex gap-10 [&>*]:w-1/2'>
+            <div className='flex gap-10 [&>*]:w-1/2 max-[520px]:[&>*]:w-full'>
                 <SelectInput form={form} name="jobTitle" {...select[0]}/>
                 <SelectInput form={form} name="company" {...select[1]} />
             </div>
@@ -150,7 +150,7 @@ const PostJob = () => {
         </div>
         <div className='flex gap-8 mt-5 '>
               <Button  color='yellow.5' variant='light' onClick={handlePost} >Publish job</Button>
-              <Button color='yellow.6' onClick={handleDraft} variant='light' >Save as draft</Button>
+              <Button className="mb-2 " color='yellow.6' onClick={handleDraft} variant='light' >Save as draft</Button>
         </div>
     </div> 
   )

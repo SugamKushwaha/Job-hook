@@ -29,7 +29,7 @@ const SearchBar = () => {
     <div className="px-5 mr-5  max-[1200px]:!flex-wrap  flex gap-5 items-center">
 
       {dropdownData.map((item, index) => (
-        <div key={index} className="w-1/4 max-[900px]:w-1/3 max-[700px]:w-[47%] my-2">
+        <div key={index} className="w-1/4 max-[900px]:w-1/3 max-[700px]:w-[47%] max-[390px]:w-full my-2">
           <MultiInput {...item} />
         </div>
       ))}

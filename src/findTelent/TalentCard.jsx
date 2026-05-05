@@ -60,7 +60,7 @@ const TalentCard = (props) => {
   }
 
   return (
-    <div className='bg-zinc-800 p-4 w-87 flex flex-col gap-3 rounded-xl hover:shadow-[0_0_5px_1px_yellow] !shadow-amber-400'>
+    <div className='bg-zinc-800 p-4 w-87 flex flex-col gap-3 rounded-xl hover:shadow-[0_0_5px_1px_yellow] !shadow-amber-400 max-[720px]:w-full'>
       
       <div className='flex justify-between'>
         <div className='flex gap-2 items-center'>
@@ -77,7 +77,7 @@ const TalentCard = (props) => {
         <IconHeart className='text-zinc-400 cursor-pointer' stroke={1.5} />
       </div>
 
-      <div className='flex gap-2'>
+      <div className='flex gap-2 flex-wrap'>
         {profile?.skills?.map((skill, index) => index<4 &&
           <div key={index} className='p-2 py-1 bg-zinc-700 text-amber-300 rounded-lg text-xs'>
             {skill}
